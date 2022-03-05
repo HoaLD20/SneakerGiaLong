@@ -53,7 +53,8 @@ public class UserDao extends DBConnection {
                 String sql = "SELECT * FROM `users` WHERE `uName`=? AND `uPassword`=?";
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setString(1, username);
-                pst.setString(2, SHA.encrypt(password));
+                pst.setString(2, password);
+//                pst.setString(2, SHA.encrypt(password));
                 ResultSet rs = pst.executeQuery();
 
                 if (rs.next()) {
