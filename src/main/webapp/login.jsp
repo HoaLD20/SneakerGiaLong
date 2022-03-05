@@ -1,3 +1,5 @@
+<%@ page import="com.sneaker.snakergialong.Controller.User.LoginServlet" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +67,7 @@
     </div>
 </section>
 
-<script src="./assets/js/login.js"></script>
+<script src="assets/js/login.js"></script>
 
 <%@include file="components/footer.jsp" %>
 </body>
