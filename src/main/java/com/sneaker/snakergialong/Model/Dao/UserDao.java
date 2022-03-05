@@ -21,7 +21,7 @@ public class UserDao extends DBConnection {
     private boolean search(String userName) {
 
         try {
-            PreparedStatement pst = con.prepareStatement("SELECT * FROM `users` WHERE `uName` = ? ");
+            PreparedStatement pst = con.prepareStatement("SELECT * FROM `users` WHERE `uEmail` = ? ");
             pst.setString(1, userName);
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
@@ -50,7 +50,7 @@ public class UserDao extends DBConnection {
         try {
             if (search(username)) {
 //                con = db.getConnect();
-                String sql = "SELECT * FROM `users` WHERE `uName`=? AND `uPassword`=?";
+                String sql = "SELECT * FROM `users` WHERE `uEmail`=? AND `uPassword`=?";
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setString(1, username);
                 pst.setString(2, password);
@@ -70,4 +70,10 @@ public class UserDao extends DBConnection {
         }
         return null;
     }
+
+//    public static void main(String[] args) {
+//        UserDao userDao = new UserDao();
+//        System.out.println(userDao.signIn("leduchoa911@gmail.com", "hoa"));
+//    }
 }
+
