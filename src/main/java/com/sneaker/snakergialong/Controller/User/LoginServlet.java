@@ -8,7 +8,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "Login", value = "/Login")
+@WebServlet(name = "Login", urlPatterns =  {"/Login"})
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.setAttribute("LoginUser", user);
             session.setMaxInactiveInterval(60*15);
-            response.sendRedirect("index.html");
+            response.sendRedirect("../webapp/index.jsp");
 //            if (user.getuRole().equalsIgnoreCase("admin")) {
 //                response.sendRedirect("index.html");   //admin
 //            } else {

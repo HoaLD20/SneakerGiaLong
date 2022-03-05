@@ -39,7 +39,7 @@
                     </div>
                     <div class="card-footer py-3 border-0">
                         <div class="text-center">
-                            Remember your password? <a href="login.jsp" class="text-dark">Login</a>
+                            Remember your password? <a href="WEB-INF/jsp/login.jsp" class="text-dark">Login</a>
                         </div>
                     </div>
                 </div>

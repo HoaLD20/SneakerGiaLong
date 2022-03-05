@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow">
     <div class="container d-flex justify-content-between align-items-center">
 
-        <a class="navbar-brand text-success logo h1 align-self-center" href="#">
+        <a class="navbar-brand text-success logo h1 align-self-center" href="HomeServlet">
             Sneaker Shop
         </a>
 

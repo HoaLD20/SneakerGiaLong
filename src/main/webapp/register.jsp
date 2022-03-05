@@ -59,7 +59,7 @@
                     </div>
                     <div class="card-footer py-3 border-0">
                         <div class="text-center">
-                            Already have an account? <a href="login.jsp" class="text-dark">Login</a>
+                            Already have an account? <a href="WEB-INF/jsp/login.jsp" class="text-dark">Login</a>
                         </div>
                     </div>
                 </div>
