@@ -8,22 +8,19 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet", value = "/LoginServlet")
+@WebServlet(name = "Login", value = "/Login")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //get User Name and password when Customer inptut
-        String username = request.getParameter("SigninName");
-        String password = request.getParameter("SigninPassword");
+        String username = request.getParameter("txtEmail");
+        String password = request.getParameter("txtPassword");
         UserDao userDao = new UserDao(); // constructor User
         User user = new User();
-        user = userDao.signIn(username, password); // call funtion to sinup
-        // if null it mean user not have exist and sendirect failed.jsp
+        user = userDao.signIn(username, password);
         if (user == null) {
             //TODO : MAKE forget password
             request.setAttribute("message", "Cant't Login <br/> Wrong username or password .. ");
@@ -36,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 
             if (user.getuRole().equalsIgnoreCase("admin")) {
 //                System.out.println("admin dang nhap ne hihi");
-                response.sendRedirect("admin/Index.jsp");   //admin
+                response.sendRedirect("index.html");   //admin
             } else {
 //                System.out.println("ko phai admin nha");
                 response.sendRedirect("index.jsp");
